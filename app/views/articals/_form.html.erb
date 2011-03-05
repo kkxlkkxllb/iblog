@@ -1,0 +1,30 @@
+<%= form_for(@artical) do |f| %>
+  <% if @artical.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @artical.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.select :category_id,Category.all.collect {|s| [s.title,s.id] }%>
+  </div>
+  <div class="field">
+    <%= f.label :top_token %>
+    <%= f.check_box :top_token %>
+  </div>
+  <div class="actions">
+    <%= f.submit "save",:class => "button" %>
+  </div>
+<% end %>

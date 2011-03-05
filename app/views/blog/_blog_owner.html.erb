@@ -1,0 +1,42 @@
+<div id="header">
+	<div id="micro-mss" class="round">
+		<a class="mm"><%= current_user.micropost %></a>
+	</div>
+	<div id="user-bar">
+	<%= render :partial => 'users/user_bar'%>
+	</div>	
+</div>
+<div id="blog" class="tabbed_area">
+<ul class="tabs">
+	<li><%= link_to "Recent","#",:title=>"recent",:class=>"tab active"%></li>
+	<% for category in @categories %>
+	<li><%= link_to category.title,"#",:title=>"content_#{category.id}",:class=>"tab"%></li>
+	<% end %>	
+</ul>
+<div id="recent" class="content">
+	<ul class="article">
+	<% for artical in @recent %>
+	<li class="<%=cycle("light","dark") %> round"><%= link_to artical.title,article_path(artical)%>
+		<div class="date">
+			<%= time_update(artical) %>
+			[<%= link_to "Edit",edit_artical_path(artical) %>]
+		</div>
+	</li>
+	<% end %>
+	</ul>
+</div>
+<% for category in @categories %>
+<div id="content_<%= category.id %>" class="content">
+	<% @artical_list = Artical.where(['category_id = ?',category.id]).order("updated_at DESC")%>
+	<ul class="article">
+	<% for artical in @artical_list %>
+	<li class="<%=cycle("light","dark") %> round"><%= link_to artical.title,article_path(artical)%>
+		<div class="date"><%= time_update(artical) %>
+		[<%=link_to "Edit",edit_artical_path(artical)%>]
+		</div>
+	</li>
+	<% end %>
+	</ul>
+</div>
+<% end %>
+</div>

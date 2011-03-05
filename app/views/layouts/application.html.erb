@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @title %></title>
+  <%= stylesheet_link_tag 'application' ,'jquery.cleditor','tip-skyblue','style','coin-slider-styles'%>
+	<%= auto_discovery_link_tag(:rss,rss_path) %>
+  <%= csrf_meta_tag %>
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-21374417-1']);
+	  _gaq.push(['_setDomainName', '.heartme.info']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+</head>
+<body>
+	<div id="page">
+		<div id="left">
+			<div id="logo">
+				<%= image_tag("logo.png",:title=>"Welcome to HeArtMe's home!",:alt=>"Welcome to HeArtMe's home!",:class=>"logo")%>
+			</div>
+		<div id="navigation">
+			<div class="nav"><%= link_to image_tag("home2.png",:class=>"link",:title=>"我的主页",:alt=>"我的主页"),home_path %></div>
+			<div class="nav"><%= link_to image_tag("blog2.png",:class=>"link",:title=>"我的部落格",:alt=>"我的部落格"),blog_path %></div>
+			<div class="nav"><%= link_to image_tag("me2.png",:class=>"link",:title=>"我的介绍",:alt=>"我的介绍"), me_path %></div>
+		</div>	
+		<div id="friends">
+			<script type="text/javascript" src="http://jc.revolvermaps.com/r.js"></script><script type="text/javascript">rm_f1st('0','180','true','false','2f6396','2lzo55gmzyi','true','ff8a00');</script><noscript><applet codebase="http://rc.revolvermaps.com/j" code="core.RE" width="180" height="180" archive="g.jar"><param name="cabbase" value="g.cab" /><param name="r" value="true" /><param name="n" value="false" /><param name="i" value="2lzo55gmzyi" /><param name="m" value="0" /><param name="s" value="180" /><param name="c" value="ff8a00" /><param name="v" value="true" /><param name="b" value="2f6396" /><param name="rfc" value="true" /></applet></noscript>
+			<div class="comment">
+				<%= link_to "给我留言","http://booksoul.heroku.com/chat"%>
+			</div>
+			<div class="add">
+			<%= link_to "ZARD music","http://zard.heroku.com",:target=>"_blank"%>
+			</div>
+			<div class="add">
+			<%= link_to "书魂主站","http://booksoul.heroku.com",:target=>"_blank"%>
+			</div>
+			<div class="add">
+			<%= link_to "Suitear","http://www.suitear.com",:target => "_blank"%>
+			</div>
+			<div class="add">
+			<%= link_to "李华顺Rails","http://huacnlee.com",:target => "_blank"%>
+			</div>
+			<div class="add">
+			<%= link_to "时寒冰","http://shihb.blog.sohu.com/#tp_f57d173792",:target => "_blank"%>
+			</div>
+			<div class="add">
+			<%= link_to "里克Rails","http://railser.cn",:target => "_blank"%>
+			</div>
+			<div class="add">
+			<%= link_to "FredWu-Rails","http://fredwu.me/",:target => "_blank"%>
+			</div>
+			<embed src="http://zard.heroku.com/swf/blogparts.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="140" height="290" wmode="transparent">
+				
+		</div>
+		</div>
+			<div id="main" >
+				<%= yield %>				
+			</div>					
+	</div>
+<%= javascript_include_tag 'jquery','rails','jquery.cleditor.min','jquery.poshytip.min','jquery.jeditable','coin-slider.min','loopedslider.min','application'%>
+</body>
+</html>
