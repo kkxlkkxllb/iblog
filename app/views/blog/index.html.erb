@@ -1,9 +1,0 @@
-<% if current_user %>
-	<% cache(:action => 'index',:action_suffix => 'blog_owner') do %>
-		<%= render :partial => 'blog_owner'%>
-	<% end %>
-<% else %>
-	<% cache(:action => 'index',:action_suffix => 'blog_visiter') do %>
-		<%= render :partial => 'blog_visiter' %>
-	<% end %>
-<% end %>

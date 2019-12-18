@@ -1,8 +1,0 @@
-<div id="new_img">
-	<%= flash[:error]%>
-<% form_for @image ,:url=>createimage_path do |f| %>
-	<%= f.label "图片地址"%>
-	<%= f.text_field :url %>
-	<%= f.submit "save",:class =>"button"%>
-<% end %>
-</div>
