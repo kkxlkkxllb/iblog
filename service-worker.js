@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.04242231484e4d2e99fb1a6075a2963d.js"
+  "/precache-manifest.c969300e32af14b7b316be4508dac200.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "up17orgs"});
@@ -35,4 +35,3 @@ workbox.routing.registerRoute("index.html", workbox.strategies.networkFirst(), '
 workbox.routing.registerRoute("/encoderWorker.min.js", workbox.strategies.cacheFirst(), 'GET');
 workbox.routing.registerRoute(/^https:\/\/fonts.googleapis.com\//, workbox.strategies.cacheFirst(), 'GET');
 workbox.routing.registerRoute(/^https:\/\/libiao.ubairn.com\//, workbox.strategies.cacheFirst(), 'GET');
-workbox.routing.registerRoute(/^https:\/\/api.bmobcloud.com\//, workbox.strategies.networkFirst(), 'GET');
