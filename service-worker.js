@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.5564823eab82be20e244ab520860cc6c.js"
+  "/precache-manifest.a67158ad6d6f69f105016daa1d5d439c.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "up17orgs"});
